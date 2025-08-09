@@ -9,4 +9,5 @@ import org.springframework.stereotype.Repository;
 public interface InventoryRepository extends JpaRepository<Inventory, Long> {
 
 
+    boolean existsBySkuCodeAndQuantityGreaterThanEqual(String skuCode, int quantity);
 }
