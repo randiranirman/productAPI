@@ -7,6 +7,8 @@ import org.moviecrudspring.orderservice.Service.OrderService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/orders")
 @AllArgsConstructor
@@ -26,6 +28,13 @@ public class OrderController {
         orderService.placeOrder(orderRequest);
 
         return "Order placed successfully";
+
+    }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<OrderRequest> getAllOrders() {
+        return orderService.getAllOrders();
 
     }
 
