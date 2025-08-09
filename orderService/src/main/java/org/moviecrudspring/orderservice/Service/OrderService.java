@@ -7,6 +7,7 @@ import org.moviecrudspring.orderservice.Models.Order;
 import org.moviecrudspring.orderservice.Repository.OrderRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -35,5 +36,19 @@ public class OrderService {
 
 
 
+    }
+
+
+    public List<OrderRequest> getAllOrders() {
+
+
+        var orders = orderRepository.findAll();
+        return orders.stream().map(order -> new OrderRequest(
+                order.getId(),
+                order.getOrderNumber(),
+                order.getPrice(),
+                order.getQuantity(),
+                order.getSkuCode()
+        )).toList();
     }
 }
