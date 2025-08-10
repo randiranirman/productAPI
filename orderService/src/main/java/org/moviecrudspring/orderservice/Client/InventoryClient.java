@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(name = "inventory" , url = "http://localhost:8082")
 public interface InventoryClient {
 
-    @RequestMapping( method = RequestMethod.GET , value = "/api/inventory")
+    @RequestMapping( method = RequestMethod.GET , value = "/api/inventory/inventory-check")
     boolean isInStock(@RequestParam String skuCode, @RequestParam int quantity);
 
 
