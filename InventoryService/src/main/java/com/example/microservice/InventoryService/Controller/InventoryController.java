@@ -27,7 +27,7 @@ public class InventoryController {
 
 
 
-            var response = inventoryService.createInventory(inventoryRequest.skuCode(), inventoryRequest.Quantity());
+            var response = inventoryService.createInventory(inventoryRequest.skuCode(), inventoryRequest.quantity());
 
 
         return response;
@@ -53,4 +53,6 @@ public class InventoryController {
     public boolean isInStock(@RequestParam String skuCode, @RequestParam int quantity) {
         return inventoryService.isInStock(skuCode, quantity);
     }
+
+    
 }
