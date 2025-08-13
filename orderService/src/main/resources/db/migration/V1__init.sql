@@ -1,3 +1,6 @@
+
+
+
 CREATE TABLE t_orders (
                           id BIGINT NOT NULL AUTO_INCREMENT,
                           order_number VARCHAR(50) NOT NULL,
