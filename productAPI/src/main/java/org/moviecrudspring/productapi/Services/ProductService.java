@@ -54,6 +54,19 @@ public class ProductService {
 
 
     }
+    public boolean deleteProduct(String id) {
+        var   product =  productRepository.findById(id).get();
+
+        if( product  == null) {
+            return false;
+        }
+        productRepository.delete(product);
+
+
+        return true;
+
+
+    }
 
 
 

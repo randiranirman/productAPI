@@ -39,4 +39,16 @@ public class ProductController {
     }
 
 
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public void deleteProductBySkuCode(@PathVariable String id) {
+        try {
+            productService.deleteProduct(id);
+        } catch (Exception e) {
+            e.printStackTrace(); // or throw a proper exception
+        }
+
+
+    }
+
 }
